@@ -29,6 +29,9 @@ const init = () => {
   player1El.classList.remove('player--active');
   player0El.classList.remove('player--winner');
   player1El.classList.remove('player--winner');
+  document.getElementById('win--0').classList.add('hidden');
+  document.getElementById('win--1').classList.add('hidden');
+  //document.getElementById(['name--0', 'name--1']).textContent = ['Player 1','Player 2']
 };
 init();
 
@@ -78,6 +81,9 @@ btnhold.addEventListener('click', () => {
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.add('player--winner');
+      document
+        .getElementById('win--' + activePlayer)
+        .classList.remove('hidden');
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.remove('player--active');
